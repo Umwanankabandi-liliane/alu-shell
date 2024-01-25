@@ -1,2 +1,2 @@
 #!/bin/bash
-chown --guillaume betty hello
+chmod --guillaume betty hello
