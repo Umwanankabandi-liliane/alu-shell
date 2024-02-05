@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
-#manage my files
-while [[ 1 -eq 1 ]]; do
-        echo "I am alive!" >> /tmp/my_process
-        sleep 2
-done
+#i love you
+clean_up='rm /var/run/myscript.pid; exit $?'
+
+echo $$ > "/var/run/myscript.pid"
