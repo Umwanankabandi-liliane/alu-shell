@@ -1,7 +1,11 @@
 #!/usr/bin/env bash
-#display
-prog_pid=()
-readarray -t prog_pid < <(pgrep -la -x "bash.*" | grep '4-to_infinity_beyond' | cut -d ' ' -f 1)
-for ((i = 0; i < "${#prog_pid[@]}"; i++)) do
-	kill -s SIGTERM "${prog_pid[i]}"
-done	
+# kills the infinity and beyond program using sigkill signal
+
+# Get the pid of the program
+id=$(pgrep "bash ./4-to_infinity_and_beyond" -f)
+
+Terminate the infinate process
+if [ -n "$id" ]
+then
+  kill -15 "$id"
+fi  
